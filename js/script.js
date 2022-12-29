@@ -3,3 +3,5 @@ var consultaCEP = fetch('https://viacep.com.br/ws/66033195/json/')
                     .then(r => console.log(r));
 
 console.log(consultaCEP);
+
+console.log("Testando Alterações e commits");
