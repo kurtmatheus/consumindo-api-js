@@ -1,7 +1,18 @@
-var consultaCEP = fetch('https://viacep.com.br/ws/66033195/json/')
-                    .then(response => response.json())
-                    .then(r => console.log(r));
+async function buscaCEP(cep) {
+    try {
+        var consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        consultaCEPjson = await consultaCEP.json();
 
-console.log(consultaCEP);
+        if(consultaCEPjson.erro){
+            throw Error('CEP inexistente!');
+        } 
+        
+        console.log(consultaCEPjson);
+        
+    } catch(erro) {
+        console.log(erro)
+    }   
 
-console.log("Testando Alterações e commits");
+}
+
+buscaCEP('66033196')
