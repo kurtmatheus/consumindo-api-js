@@ -75,3 +75,10 @@
     line-height: 18px;
     color: var(--vermelho);
 }
+
+.cep_invalido {
+    color: red; 
+    font-size: 0.75em; 
+    margin-top: 10px; 
+    display:none;
+}
